@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!-- Outbound: Browser (Verto) -> PSTN via Telnyx -->
+<include>
+  <context name="default">
+    <extension name="outbound_pstn">
+      <condition field="destination_number" expression="^\+?(\d+)$">
+        <action application="set" data="effective_caller_id_number=${caller_id_number}"/>
+        <action application="set" data="effective_caller_id_name=${caller_id_name}"/>
+        <!-- No CDR recording -->
+        <action application="set" data="api_on_answer="/>
+        <action application="bridge" data="sofia/gateway/telnyx-us/$1"/>
+      </condition>
+    </extension>
+  </context>
+</include>

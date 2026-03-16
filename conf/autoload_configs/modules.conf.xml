@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<configuration name="modules.conf" description="Modules">
+  <modules>
+    <!-- Core -->
+    <load module="mod_logfile"/>
+    <load module="mod_event_socket"/>
+    <load module="mod_commands"/>
+    <load module="mod_dptools"/>
+    <load module="mod_dialplan_xml"/>
+
+    <!-- Codecs -->
+    <load module="mod_opus"/>
+    <load module="mod_g711"/>
+    <load module="mod_g722"/>
+
+    <!-- SIP/VoIP -->
+    <load module="mod_sofia"/>
+    <load module="mod_verto"/>
+    <load module="mod_loopback"/>
+
+    <!-- Audio -->
+    <load module="mod_native_file"/>
+    <load module="mod_sndfile"/>
+    <load module="mod_tone_stream"/>
+
+    <!-- NO CDR modules — call record disabled by design -->
+    <!-- mod_cdr_csv NOT loaded -->
+    <!-- mod_cdr_sqlite NOT loaded -->
+    <!-- mod_cdr_pg_csv NOT loaded -->
+    <!-- mod_json_cdr NOT loaded -->
+  </modules>
+</configuration>

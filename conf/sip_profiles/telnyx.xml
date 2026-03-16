@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<profile name="telnyx">
+  <aliases></aliases>
+  <gateways>
+    <gateway name="telnyx-us">
+      <param name="username" value="$${telnyx_sip_username}"/>
+      <param name="password" value="$${telnyx_sip_password}"/>
+      <param name="proxy" value="sip.telnyx.com"/>
+      <param name="register-proxy" value="sip.telnyx.com"/>
+      <param name="expire-seconds" value="600"/>
+      <param name="register" value="true"/>
+      <param name="register-transport" value="tls"/>
+      <param name="retry-seconds" value="30"/>
+      <param name="caller-id-in-from" value="false"/>
+      <param name="from-domain" value="sip.telnyx.com"/>
+    </gateway>
+  </gateways>
+  <domains>
+    <domain name="all" alias="false" parse="false"/>
+  </domains>
+  <settings>
+    <param name="debug" value="0"/>
+    <param name="sip-trace" value="no"/>
+    <param name="context" value="public"/>
+    <param name="dialplan" value="XML"/>
+    <param name="dtmf-duration" value="2000"/>
+    <param name="codec-prefs" value="opus,PCMU,PCMA,G722"/>
+    <param name="rtp-ip" value="auto"/>
+    <param name="sip-ip" value="auto"/>
+    <param name="ext-rtp-ip" value="auto-nat"/>
+    <param name="ext-sip-ip" value="auto-nat"/>
+    <!-- Use TLS for Telnyx SIP (TCP outbound only, no UDP inbound needed) -->
+    <param name="bind-url" value="tls:0.0.0.0:5061"/>
+    <param name="tls-only" value="true"/>
+    <param name="tls-verify-policy" value="none"/>
+    <param name="auth-calls" value="false"/>
+    <param name="record-path" value="/dev/null"/>
+  </settings>
+</profile>

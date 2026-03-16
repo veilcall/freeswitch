@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<include>
+  <X-PRE-PROCESS cmd="set" data="domain=freeswitch"/>
+  <X-PRE-PROCESS cmd="set" data="domain_name=$${domain}"/>
+  <X-PRE-PROCESS cmd="set" data="hold_music=local_stream://moh"/>
+  <X-PRE-PROCESS cmd="set" data="use_profile=telnyx"/>
+  <X-PRE-PROCESS cmd="set" data="outbound_caller_id_name=PrivateCall"/>
+
+  <!-- Telnyx SIP trunk credentials — populated via env at runtime -->
+  <X-PRE-PROCESS cmd="set" data="telnyx_sip_username=$${TELNYX_SIP_USERNAME}"/>
+  <X-PRE-PROCESS cmd="set" data="telnyx_sip_password=$${TELNYX_SIP_PASSWORD}"/>
+
+  <!-- Verto secret for credential validation -->
+  <X-PRE-PROCESS cmd="set" data="verto_secret=$${FREESWITCH_VERTO_SECRET}"/>
+</include>

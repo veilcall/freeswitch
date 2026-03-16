@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<configuration name="verto.conf" description="Verto Endpoint">
+  <settings>
+    <param name="debug" value="0"/>
+  </settings>
+  <profiles>
+    <profile name="default">
+      <param name="bind-local" value="0.0.0.0:8081"/>
+      <param name="force-register-domain" value="$${domain}"/>
+      <param name="secure-combined" value="false"/>
+      <param name="secure-chain" value="false"/>
+      <param name="local-network" value="localnet.auto"/>
+      <param name="apply-candidate-acl" value="localnet.auto"/>
+      <param name="rtp-ip" value="auto-nat"/>
+      <param name="ext-rtp-ip" value="auto-nat"/>
+      <param name="mcast-ip" value="224.1.1.1"/>
+      <param name="mcast-port" value="1337"/>
+      <param name="timer-name" value="soft"/>
+    </profile>
+  </profiles>
+</configuration>

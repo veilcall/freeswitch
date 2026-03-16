@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<profile name="internal">
+  <aliases></aliases>
+  <gateways></gateways>
+  <domains>
+    <domain name="all" alias="true" parse="false"/>
+  </domains>
+  <settings>
+    <param name="debug" value="0"/>
+    <param name="sip-trace" value="no"/>
+    <param name="sip-capture" value="no"/>
+    <param name="context" value="default"/>
+    <param name="dialplan" value="XML"/>
+    <param name="dtmf-duration" value="2000"/>
+    <param name="codec-prefs" value="opus,PCMU,PCMA,G722"/>
+    <param name="hold-music" value="$${hold_music}"/>
+    <param name="rtp-ip" value="auto"/>
+    <param name="sip-ip" value="auto"/>
+    <param name="ext-rtp-ip" value="auto-nat"/>
+    <param name="ext-sip-ip" value="auto-nat"/>
+    <param name="rtp-timeout-sec" value="300"/>
+    <param name="rtp-hold-timeout-sec" value="1800"/>
+    <param name="apply-nat-acl" value="nat.auto"/>
+    <param name="local-network-acl" value="localnet.auto"/>
+    <param name="record-path" value="/tmp"/>
+    <param name="auth-calls" value="true"/>
+    <!-- Verto WebSocket listener for browsers -->
+    <param name="bind-url" value="udp:0.0.0.0:5060"/>
+    <param name="ws-binding" value=":5066"/>
+    <param name="wss-binding" value=":7443"/>
+  </settings>
+</profile>

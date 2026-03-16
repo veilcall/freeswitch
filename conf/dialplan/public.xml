@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!-- Inbound: Telnyx -> Verto (browser) -->
+<include>
+  <context name="public">
+    <extension name="inbound_pstn">
+      <condition field="destination_number" expression="^\+?(\d+)$">
+        <!-- Route to Verto/registered user matching the DID -->
+        <action application="set" data="call_direction=inbound"/>
+        <!-- No CDR recording -->
+        <action application="transfer" data="${destination_number} XML default"/>
+      </condition>
+    </extension>
+  </context>
+</include>
